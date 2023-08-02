@@ -109,7 +109,6 @@ Html tag ထဲမှာ style attribute နဲ့ တစ်ခါထဲ ထည�
     <html>
     <head>
       <style>
-      **Internal CSS here**
           p ( Tag selector) {
             color (property) : red (value) 
             }
