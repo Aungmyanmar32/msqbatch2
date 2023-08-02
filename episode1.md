@@ -165,9 +165,9 @@ Html tag ထဲမှာ style attribute နဲ့ တစ်ခါထဲ ထည�
  
  - လက်တွေ့မှာ ****Inline CSS** နဲ့  **Internal CSS ကို အသုံးမပြုကြပဲ** **External CSS** ကို သာ သုံးကြပါတယ်။**
  - CSS **precedence** ဦးစားပေးစနစ်
-    တူညီတဲ့ selector တစ်ခုကို  ရေးနည်းသုံးနည်းစလုံးမှာproperty တူတူ ကြေငြာထားရင် 
-    **Inline CSS** က ဦးစားပေး **နံပါတ် တစ်**
-    **Internal CSS** က ဦးစားပေး **နံပါတ် နှစ်**
-    **External CSS** က ဦးစားပေး **နံပါတ် သုံ**းပါ
-     p tag တစ်ခုကို **inline css** မှာ  **red** , **Internal css** မှာ  **blue** , **external css** မှာ **yellow** လို့ ကြေငြာထားမယ်ဆိုရင် **precedence** ဦးစားပေးစနစ်အရ **red** ကိုပဲ ပြပေးမှာပါ။
+    - တူညီတဲ့ selector တစ်ခုကို  ရေးနည်းသုံးနည်းစလုံးမှာproperty တူတူ ကြေငြာထားရင် 
+    - **Inline CSS** က ဦးစားပေး **နံပါတ် တစ်**
+    - **Internal CSS** က ဦးစားပေး **နံပါတ် နှစ်**
+    - **External CSS** က ဦးစားပေး **နံပါတ် သုံ**းပါ
+    - p tag တစ်ခုကို **inline css** မှာ  **red** , **Internal css** မှာ  **blue** , **external css** မှာ **yellow** လို့ ကြေငြာထားမယ်ဆိုရင် **precedence** ဦးစားပေးစနစ်အရ **red** ကိုပဲ ပြပေးမှာပါ။
 
