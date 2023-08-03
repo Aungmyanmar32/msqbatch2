@@ -105,7 +105,7 @@ Html tag ထဲမှာ style attribute နဲ့ တစ်ခါထဲ ထည�
 
 ## 2.Internal CSS
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPtBAkGzLManMm4YkOtzSDSL7mD8-iS48SWA&usqp=CAU)
-
+```html
     <html>
     <head>
       <style>
@@ -136,6 +136,7 @@ Html tag ထဲမှာ style attribute နဲ့ တစ်ခါထဲ ထည�
       
       </body>
       </html>
+```
 
 ## 3.External CSS
 အပြင်မှာ **style.css** ဖိုင် သက်သက်ရေးပြီး **Html document ထဲ link ချိတ်** အသုံးပြုတာ ပါ။
