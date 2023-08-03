@@ -109,15 +109,19 @@ Html tag ထဲမှာ style attribute နဲ့ တစ်ခါထဲ ထည�
     <html>
     <head>
       <style>
-          p ( Tag selector) {
+/* tag selector */
+          p  {
             color (property) : red (value) 
             }
-            
-          .hello(class selector) {
+
+/* class selector */
+          .hello {
             font-size : 20px;
             color : blue
             }
-          #hello (Id selector){
+
+/* id selector */
+          #hello {
           border: 1px solid black;
           backgroud-color : #234;
           text-align : center
