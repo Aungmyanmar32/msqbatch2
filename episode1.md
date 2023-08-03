@@ -24,11 +24,11 @@ Html က Naked ဖြစ်နေတဲ့ လူတစ်ယောက်ဆိ�
 
 ### Html Document structure
 ![enter image description here](https://lecturely.com/assets/ckeditor/imageuploader/uploads/html-cheatsheet-intro.png)
-***!DOCTYPE html*** ဆိုတာက Html file ဖြစ်ကြောင်း browser ကို ပြောလိုက်တာပါ။
-html document တစ်ခုကို  Html file ဖြစ်ကြောင်း ကြေငြာပြီးရင်
-html ဖိုင်ကို ***.html*** နဲ့ file format ထားသိမ်းပေးရပါမယ်.
-```<html> ``` နဲ့ စပြီး ```</html>```နဲ့ ပိတ်ပေးရပါမယ်။
-html ဖိုင်မှာ ပုံမှန်အားဖြင့် ```<head> ``` ```<body> ```  စတာတွေ ပါပါတယ်။ အဲ့တာတွေကို **html element** / **html tag** လို့ခေါ်ပါတယ်။ 
+- ***!DOCTYPE html*** ဆိုတာက Html file ဖြစ်ကြောင်း browser ကို ပြောလိုက်တာပါ။
+- html document တစ်ခုကို  Html file ဖြစ်ကြောင်း ကြေငြာပြီးရင်
+- html ဖိုင်ကို ***.html*** နဲ့ file format ထားသိမ်းပေးရပါမယ်.
+- ```<html> ``` နဲ့ စပြီး ```</html>```နဲ့ ပိတ်ပေးရပါမယ်။
+- html ဖိုင်မှာ ပုံမှန်အားဖြင့် ```<head> ``` ```<body> ```  စတာတွေ ပါပါတယ်။ အဲ့တာတွေကို **html element** / **html tag** လို့ခေါ်ပါတယ်။ 
 
 ### **Html tag**
 Html tag ရေးရင် **အဖွင့် tag** ```<body> ``` နဲ့ **အပိတ် tag** ```</body> ``` ရေးပေးရပါတယ်။
