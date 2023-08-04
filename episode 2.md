@@ -1,6 +1,6 @@
 ﻿## Msqure Programing Fullstack Course
-### Episode 3 Summary
-Episode 3 မှာတော့ 
+### Episode 2 Summary
+Episode 2 မှာတော့ 
 CSS Layout နဲ့ ပတ်သတ်တဲ့ အရာတွေ လေ့လာသွားကြပါမယ်။
 
  - Media Query
