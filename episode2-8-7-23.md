@@ -227,11 +227,11 @@ syntax
        } ;
 
    code
-
+```js
      function helloWorld(){
         console.log("Hello world");
         };
-
+```
 - **ES6 arrow Function** (antonymous အမည်မဲ့)
 syntax
    `(parameter)` `=>` `{`
@@ -239,42 +239,43 @@ syntax
    `}`
 
 code
-   
+   ```js
 
      () => {
         console.log (" Hello world");
         };
-
+```
  **ES6** function ကို variable တစ်ခုထဲတွင် သိမ်းထားလေ့ရှိပါတယ်။
 code
-
+```js
     const sayHello = () =>{
     console.log ( " Hello ")
     } ;
-         
+ ```        
 ##
 ### Function ကို ခေါ် ယူအသုံးပြုခြင်း
 အထက်မှာ ဖော်ပြခဲ့သလို function တွေကို သတ်မှတ်လိုက်ရုံ နဲ့ ဘာ လုပ်ဆောင်ချက်မျှ
 ပြုလုပ်ပေးမည်မဟုတ်ပါ။<br>
 သတ်မှတ်ထားတဲ့ **function Name** (or) **သိမ်းထားတဲ့ variable Name** ကို **ခေါ််ပေးမှသာ** function က အလုပ်လုပ်မည်ဖြစ်သည်။
 
-    
+    ```js
       function helloWorld(){
         console.log("Hello world");
       };
        helloWorld();//call by function name
       
       //Hello world
-
+```
 **ES6**
    
-
+```js
        const sayHello = () =>{
          console.log ( " Hello ")
        } ;
             sayHello();//call by variable name
             
             // Hello
+```
 ##
 ### **Function with parameter**
  - function name နောက်က လက်သဲကွင်း ထဲမှာ parameter ကို ထည့် သွင်းကာ define လုပ်နိုင်သည်။
@@ -342,14 +343,14 @@ code
    ပြန်ထုတ်ပေးသည်။
 
  
-  
+  ```js
 
      const toCheck = (a,b) => {
              return (a + b );
              }
              toCheck( 3, 4);
              //return 7
-
+```
 ### Try this ....
 
     const cake = 5;
