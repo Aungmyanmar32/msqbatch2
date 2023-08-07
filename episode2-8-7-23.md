@@ -232,7 +232,7 @@ syntax
         console.log("Hello world");
         };
 ```
-- **ES6 arrow Function** (antonymous အမည်မဲ့)
+- **ES6 arrow Function** (anonymous အမည်မဲ့)
 syntax
    `(parameter)` `=>` `{`
    `function body;`
