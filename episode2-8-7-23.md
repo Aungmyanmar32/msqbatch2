@@ -13,11 +13,11 @@ Html element တွေကို Layoutချတဲ့ အခါ အသုံး�
 Real world web app တွေ ရေးတဲ့အခါ တကယ်ကို အသုံများတဲ့ CSS နည်းပညာပါ။
 Flex-box ကို မလေ့လာခင် Html Element တွေ ရဲ့ nesting သဘောသဘာ၀ကို အရင်သိထားရပါမယ်။
 ``` html
-<div class="container"> parent element
+<div class="container"> <!-- parent element -->
      <div>child element
      Div 1
      </div>
-     <div>child element
+     <div><!-- child element -->
       Div2
      </div>
 </div> 
@@ -29,11 +29,11 @@ Div နှစ်ခုကို ထိန်းထားတဲ့ container ဆ�
 parent Div ကို display : flex; လို့ CSS property ပေးလိုက်တာနဲ့  သူ့ရဲ့ child Div တွေကို နေရာချ စီမံလို့ ရပါပြီး။
 
 ``` html
-<div class="container"> parent element
-     <div>child element
+<div class="container"> <!-- parent element -->
+     <div><!-- child element -->
      Div 1
      </div>
-     <div>child element
+     <div><!-- child element -->
       Div2
      </div>
 </div> 
