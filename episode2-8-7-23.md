@@ -282,7 +282,7 @@ code
  ပြီး အသုံးပြုနိုင်ပါသည်။
 
 code
-
+```js
     //example - 1
     
     function sayHi(name) {
@@ -305,9 +305,9 @@ code
     numberPlus(80,160);
     // 240
 
- 
+ ```
  ### ES6
- 
+```js 
 
     //example - 1
     
@@ -332,6 +332,7 @@ code
     
      multipleNumber(80,160);
     // 12800
+```
 ##
 ### Return
  - function များ၏ လုပ်ဆောင်ချက်**ရလဒ် များကို ရယူအသုံးပြုနိုင်ရန်** return ဖြင့် ထုတ်ပြန်ပေးရသည်။
@@ -351,7 +352,7 @@ code
              //return 7
 ```
 ### Try this ....
-
+```js
     const cake = 5;
     const juice = 3;
     const orange = 1;
@@ -376,7 +377,7 @@ code
     
     console.log ( "You Have to Pay " + toPay + "$"+" "+ "Total");
 
-       
+```       
 **totalPrice** function ခေါ််တဲ့အခါ  **parameter** တွေမှာ အခြားတန်ဖိုးတွေ ( orange , apple, dragon) အစားထိုးပြီး **console မှာ run** ကြည့်ပါ။
   ##
  
