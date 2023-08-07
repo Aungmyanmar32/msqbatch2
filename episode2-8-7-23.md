@@ -257,8 +257,8 @@ code
 အထက်မှာ ဖော်ပြခဲ့သလို function တွေကို သတ်မှတ်လိုက်ရုံ နဲ့ ဘာ လုပ်ဆောင်ချက်မျှ
 ပြုလုပ်ပေးမည်မဟုတ်ပါ။<br>
 သတ်မှတ်ထားတဲ့ **function Name** (or) **သိမ်းထားတဲ့ variable Name** ကို **ခေါ််ပေးမှသာ** function က အလုပ်လုပ်မည်ဖြစ်သည်။
-
-    ```js
+```js
+    
       function helloWorld(){
         console.log("Hello world");
       };
@@ -267,7 +267,6 @@ code
       //Hello world
 ```
 **ES6**
-   
 ```js
        const sayHello = () =>{
          console.log ( " Hello ")
