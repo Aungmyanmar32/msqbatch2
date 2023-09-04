@@ -8,6 +8,8 @@
 - AppRouter
 - Server side routing and client side routing
 - a tag and link component
+- Layout component
+- children props
 
 ##
 
