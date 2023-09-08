@@ -10,7 +10,7 @@
 - show menu (MUI Card component)
   ##
 
-### အရင် သင်ခန်းစာတုန်းကလို Menu page (Menu component) တစ်ခုထဲမှာပဲ create / update / delete လုပ်တာတွေကို စုပြုံ မထားတော့ပဲ menu create လုပ်တဲ့အပိုင်းကို CreateMenu ဆိုတဲ့ component တစ်ခု လုပ်ပြီး သီးသန့်ခွဲထုတ်လိုက်ပါမယ်
+#### အရင် သင်ခန်းစာတုန်းကလို Menu page (Menu component) တစ်ခုထဲမှာပဲ create / update / delete လုပ်တာတွေကို စုပြုံ မထားတော့ပဲ menu create လုပ်တဲ့အပိုင်းကို CreateMenu ဆိုတဲ့ component တစ်ခု လုပ်ပြီး သီးသန့်ခွဲထုတ်လိုက်ပါမယ်
 
 ```js
 // frontend/src/pages/menu/CreateMenu.tsx
