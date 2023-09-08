@@ -253,7 +253,8 @@ const menu = menus.find((menu) => menu.id === menuToUpdate.id);
 - နမူနာ
 
 ```html
-address:port/route/params http://localhost:5000/users/1
+address:port/route/params
+http://localhost:5000/users/1
 ```
 
 - express မှာ req.params ဆိုပြီး requset ၀င်လာတဲ့ params ကို ဖမ်းလို့ရပါတယ်။
