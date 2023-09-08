@@ -60,6 +60,89 @@ export default CreateMenu;
 
 - Menu component ထဲက menu တစ်ခု create လုပ်တဲ့ function ကို CreateMenu component ထဲကို ရွေ့ပြီး menu တစ်ခု create လုပ်တဲ့ အခါ dialog box နဲ့ ပြပေးမှာဖြစ်ပါတယ်
 
+```js
+// frontend/src/pages/menu/CreateMenu.tsx
+
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
+import { useState } from "react";
+
+interface Props {
+  open: boolean;
+  setOpen: (value: boolean) => void;
+}
+
+interface Menu {
+  name: string;
+  price: number;
+}
+
+const CreateMenu = ({ open, setOpen }: Props) => {
+  const [menu, setMenu] = useState < Menu > { name: "", price: 0 };
+  const url = "http://localhost:5000";
+
+  //create menu
+  const handleCreateMenu = async () => {
+    console.log(menu);
+    const response = await fetch(`${url}/menu`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(menu),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
+  return (
+    <Box>
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <DialogTitle>Create Menu</DialogTitle>
+        <DialogContent>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <TextField
+              sx={{ width: 300, mb: 2 }}
+              placeholder="Name"
+              onChange={(evt) => setMenu({ ...menu, name: evt.target.value })}
+            />
+            <TextField
+              sx={{ width: 300, mb: 4 }}
+              placeholder="Price"
+              onChange={(evt) =>
+                setMenu({ ...menu, price: Number(evt.target.value) })
+              }
+            />
+
+            <Button
+              variant="contained"
+              sx={{ width: "fit-content", mb: 2 }}
+              onClick={handleCreateMenu}
+            >
+              Create menu
+            </Button>
+          </Box>
+        </DialogContent>
+      </Dialog>
+    </Box>
+  );
+};
+
+export default CreateMenu;
+```
+
+- Dialog content မှာ menu တစ်ခု crate လုပ်တဲ့အခါ လိုတဲ့ input တွေနဲ့ button တွေကို Menu component ကနေ ပြောင်းထည့်ပေးလိုက်ပြီး တခြားလိုအပ်တဲ့ data တွေကို လဲ CreateMenu component ဆီမှာ ေပြာင်းထည့်ထားတာပဲဖြစ်ပါတယ်
+
 ## To be containue....
 
 ## ဆက်ရန်....
