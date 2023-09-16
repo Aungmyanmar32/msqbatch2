@@ -162,14 +162,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
 ##
 
-## MSquare Programing Fullstack Course
-
-### Episode-_15_ Summary
-
-ဒီနေ့သင်တန်းမှာတော့ <br>
-GitHub and SSH key setup အကြောင်း လေ့လာသွားပါမယ်။
-
-##
 
 ### GitHub
 
