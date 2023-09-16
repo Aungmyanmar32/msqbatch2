@@ -8,12 +8,6 @@
 
 ## `NextJS` and using `Github`
 
-## MSquare Programing Fullstack Course
-
-### Episode-_96_
-
-### Summary For `Room(2)`
-
 ## NextJs
 
 ### Introduction
