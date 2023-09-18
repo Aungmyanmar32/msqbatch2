@@ -309,6 +309,7 @@ export type AppDispatch = typeof store.dispatch;
 ```js
 // all types using in menus
 
+// src/types/menuType.ts
 export interface CreateMenuPayload {
   name: string;
   price: number;
@@ -325,4 +326,127 @@ export interface MenuState {
   isLoading: boolean;
   error: Error | null;
 }
+
+////
+
+// src/types/menuCategoryType.ts
+
+export interface MenuCategory {
+  id: number;
+  name: string;
+  isAvailable: boolean;
+  isArchived: boolean;
+}
+
+export interface CreateMenuCategoryPayload {
+  name: string;
+  isAvailable: boolean;
+}
+
+export interface MenuCategoryState {
+  items: MenuCategory[];
+  isLoading: boolean;
+  error: Error | null;
+}
 ```
+
+- menu တွေ fetch လုပ်ပြီး ပြပေးတဲ့ MenuPage component မှာ useState နဲ့ သတ်မှတ်ထားတဲ့ menu state ကို မသုံးတော့ပဲ store ထဲက menu slice ကို dispatch လုပ်ကာ reducres ထဲက action ကို သုံးပြီး store ကို update လုပ်ပေးလိုက်မှာဖြစ်ပါတယ်
+
+```js
+// src/pages/backoffice/menu/index.tsx
+
+import BackofficeLayout from "@/components/backofficeLayout";
+import MenuCard from "@/components/menuCard/MenuCard";
+import config from "@/config";
+import { useAppSelector } from "@/store/hooks";
+import { Box, Button } from "@mui/material";
+import { useEffect, useState } from "react";
+import CreateMenu from "../../../components/createMenu/CreateMenu";
+
+const MenuPage = () => {
+  const [open, setOpen] = useState < boolean > false;
+  const menus = useAppSelector((store) => store.menu.items);
+  // const dispatch = useAppDispatch()
+
+  // call fetchMenus function once at first rendering
+  useEffect(() => {
+    //fetchMenus();
+  }, []);
+
+  //fetch menus from server
+  const fetchMenus = async () => {
+    const response = await fetch(`${config.apiBaseUrl}/menu`);
+    const menus = await response.json();
+  };
+
+  return (
+    <BackofficeLayout>
+      <Box sx={{ mr: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          {/* button to show CreateMenu's Dialog */}
+          <Button variant="contained" onClick={() => setOpen(true)}>
+            Create menu
+          </Button>
+        </Box>
+
+        {/* render CreateMenu Component */}
+        <CreateMenu open={open} setOpen={setOpen} />
+
+        <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+          {/* display menu with MenuCard */}
+          {menus.map((menu) => (
+            <MenuCard key={menu.id} menu={menu} />
+          ))}
+        </Box>
+      </Box>
+    </BackofficeLayout>
+  );
+};
+
+export default MenuPage;
+```
+
+> ရှင်းလင်းချက်
+
+```js
+const menus = useAppSelector((store) => store.menu.items);
+```
+
+- store ထဲက menu တွေကို useAppSelectior hook ကို သုံးပြီး လှမ်းယူလိုက်ပါတယ်
+- menu state ကို လဲ ဖျက်လိုက်ပြီး store ထဲက menu တွေကိုပဲ render လုပ်ထားလိုက်ပါတယ်
+- CreateMenu component ကို ခေါ်သုံးတဲ့အခါမှာလည်း menu props ကို ဖြုတ်ထားလိုက်ပါတယ်
+- CreateMenu component မှာ လည်း MENU တစ်ခု create လုပ်တိုင်း store ကို update လုပ်လိုက်မှာဖြစ်ပါတယ်
+
+![](https://cdn.discordapp.com/attachments/1153197808900395062/1153398563628388392/image.png)
+
+```js
+const [newMenu, setNewMenu] = useState < CreateMenuPayload > defaultNewMenu;
+const dispatch = useAppDispatch();
+
+//Create menu function
+const createMenu = async () => {
+  const response = await fetch(`${config.apiBaseUrl}/menu`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(newMenu),
+  });
+  const menus = await response.json();
+  dispatch(setMenus(menus));
+  //update menus
+  setNewMenu(defaultNewMenu);
+
+  //close dialog box
+  setOpen(false);
+};
+```
+
+- create menu button ကို နှိပ်လိုက်တိုင်း reducer ထဲက setMenu action ကို dispatch လုပ်ပြီး store ထဲရှိ menu state ကို update လုပ်ပေးလိုက်တာပဲ ဖြစ်ပါတယ်
+
+### ခု redux devtool ကို ဖွင့်ထားပြီး menu တွေ create လုပ်ကြည့်ပါက setMenu action ကို dispatch လုပ်ပြီး reducer က store ကို update လုပ်သွားတာကို မြင်ရမှာဖြစ်ပါတယ်
