@@ -450,3 +450,5 @@ const createMenu = async () => {
 - create menu button ကို နှိပ်လိုက်တိုင်း reducer ထဲက setMenu action ကို dispatch လုပ်ပြီး store ထဲရှိ menu state ကို update လုပ်ပေးလိုက်တာပဲ ဖြစ်ပါတယ်
 
 ### ခု redux devtool ကို ဖွင့်ထားပြီး menu တွေ create လုပ်ကြည့်ပါက setMenu action ကို dispatch လုပ်ပြီး reducer က store ကို update လုပ်သွားတာကို မြင်ရမှာဖြစ်ပါတယ်
+
+![](https://cdn.discordapp.com/attachments/1153197808900395062/1153542668270456832/image.png)
