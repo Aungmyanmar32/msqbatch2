@@ -312,29 +312,35 @@ export default UpdateMenu;
 </br>
 - name state တစ်ခု သတ်မှတ်ထားပါတယ်
  </br></br>
+ 
   `const menus = useAppSelector((state) => state.menu.items);`
   </br>
 - store ထဲမှာရှိတဲ့ menu တွေကို လှမ်းယူလိုက်ပါတယ်
 
   </br></br>
-  `const router = useRouter();`
+
+ `const router = useRouter();`
   </br>
 - next js useRouter ကို သုံးပြီး router တစ်ခု သတ်မှတ်လိုက်ပါတယ်
 
   </br></br>
-  `const menuId = Number(router.query.id);`
+  
+`const menuId = Number(router.query.id);`
   </br>
 - param အနေနဲ့ ၀င်လာတဲ့ menu id ကို လှမ်းယူလိုက်ပါတယ်
 </br></br>
+
 `const menu = menus.find((item) => item.id === menuId);`
 </br>
 - store ထဲက ယူထားတဲ့ menu တွေထဲမှာ လှမ်းယူထားတဲ့ id နဲ့ တူတဲ့ MENU item ကို ရှာထုတ်လိုက်တာပါ
   </br></br>
-  `const dispatch = useAppDispatch();`
+  
+`const dispatch = useAppDispatch();`
   </br>
 - action တွေ ကို dispatch လုပ်ဖို့ useAppDIspatch ကို အသုံးပြုထားပါတယ်
 </br></br>
-  `if (!menu) return null;`
+
+ `if (!menu) return null;`
 </br>
 - အပေါ်မှာ ရှာလိုက်တဲ့ id နဲ့ menu ကို မတွေ့ခဲ့ရင် ဒီ component မှာ ဘာမှ render မလုပ်ခိုင်းလိုက်ပါဘူး
 - ရှာလို့တွေ့ခဲ့မှ အောက်က retrun ထဲရှိ code တွေကို render လုပ်မှာဖြစ်ပါတယ်
