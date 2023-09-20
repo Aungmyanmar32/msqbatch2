@@ -49,6 +49,15 @@
   })
 ```
 
+    step 1 - createSlice()
+    step 2 - const slice1 = createSlice()
+    step 3 - const slice1 = createSlice({})
+    step 4 - const slice1 = crateSlice({name: " hello",initialState: 0 ,reducers:{} })
+    step - const slice1 = `crateSlice({name: " hello",initialState: 0 ,reducers:{action1:...., action2:...} }) `==> objcet {reducer: {}, action: {}}
+
+    export const reducer= slice1.reducer
+    export const {...,...,...,} = slice1.action
+
 - react-redux ထဲက createSlice function ကို သုံးပြီး slice တစ်ခုကို create လုပ်လို့ရပါတယ်
 - createSlice function မှာ object parameter တစ်ခု လက်ခံပါတယ်
 - အဲ့ဒီ object ထဲမှာတော့
@@ -69,6 +78,14 @@ npm i react-redux @reduxjs/toolkit
 
 - redux toolkit ကို စသုံးနိုင်ရန် store တစ်ခုကို create လုပ်ပေးရပါမယ်
 - src အောက်မှာ store folder တစ်ခု လုပ်ပြီး index.ts ဖိုင်တစ်ခုလုပ်ပါမယ်
+
+-step 1 configureStore()
+step2 configureStore({})
+step3 const stroe = configureStore({})
+step4 const stroe = configureStore({reducer: {}})
+step5 const stroe = configureStore({reducer: {slice1 : slice1 , slice2: slice2}})
+
+const store = configureStore({reducer: {slice1 , slice2}})
 
 ```js
 import { configureStore } from "@reduxjs/toolkit";
