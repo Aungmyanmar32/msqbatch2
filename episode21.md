@@ -136,10 +136,10 @@ https://www.postgresql.org/download/ မှာ postgres ကို download ရ�
 ![enter image description here](https://raw.githubusercontent.com/Aungmyanmar32/msquare-m4/main/Screenshot%202023-04-05%20122416.png)
 
 - postgres ကို setup လုပ်ဖို့ windows key ကို နှိပ်ပြီး psql လို့ ရှာလိုက်ပြီး ဖွင့်လိုက်ပါ။
-  Server [localhost]:
-  Database [postgres]:
-  Port [5432]:
-  Username [postgres]:
+  - Server [localhost]:
+  - Database [postgres]:
+  - Port [5432]:
+  - Username [postgres]:
 - တွေကို enter သာ ခေါက်ပေးလိုက်ပါ။
 - password မေးလာတဲ့အခါ install လုပ်တုန်းက ထည့်ခဲ့တဲ့ password ကို ရေးထည့်ပြီး enter ခေါက်ပေးလိုက်ပါ
 - password ကို ထည့်တဲ့အခါ terminal မှာ ဘာမှပြပေးမှာ မဟုတ်ပါဘူး။ မှန်အောင်သာရေးပြီး enter ခေါက်လိုက်ပါ။
