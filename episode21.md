@@ -425,8 +425,7 @@ prisma.table-name.findMany( {
 ##
 
 ```js
-prisma.table -
-  name.create({
+prisma.table-name.create({
     data: {},
   });
 ```
@@ -435,8 +434,7 @@ prisma.table -
 - create လုပ်လိုက်တဲ့ row ကို return ပြန်ပေးပါတယ်
 
 ```js
-prisma.table -
-  name.createMany({
+prisma.table-name.createMany({
     data: [{ item1 }, { item2 }],
   });
 ```
