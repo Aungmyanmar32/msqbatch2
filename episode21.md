@@ -2,7 +2,7 @@
 
 ### Batch 2
 
-### Episode-_20_ Summary
+### Episode-_21_ Summary
 
 ## Postgresql and Prisma
 
