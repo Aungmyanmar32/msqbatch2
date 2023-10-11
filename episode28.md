@@ -2,7 +2,7 @@
 
 ### Batch 2
 
-### Episode-_27_ Summary
+### Episode-_28_ Summary
 
 ### 1. Create layout
 
