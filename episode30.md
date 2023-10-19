@@ -329,3 +329,94 @@ export default NewLocation;
   - cancel ကို နှိပ်လိုက်ရင် dialog box ကိုပိတ်ပေး လိုက်မှာဖြစ်ပြီး
   - comfrim လုပ်လိုက်ရင်တော့ location storeထဲက createNewLocation actionကို dispatch လုပ်ပေးလိုက်မှာဖြစ်ပြီး newlocation state နဲ့ onSuccess function ကို payload အဖြစ်ထည့်ပေးလိုက်တာပဲဖြစ်ပါတယ်
 - location slice ထဲမှာ createNewLocation action ကို သတ်မှတ်ပြီး server ဆီကို request လုပ်မှာဖြစ်ပါတယ်
+
+```js
+// src/store/slices/locationSlice.ts
+
+import { CreateNewLocationOptions, LocationSlice } from "@/types/location";
+import { config } from "@/utils/config";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+const initialState: LocationSlice = {
+  items: [],
+  isLoading: false,
+  error: null,
+};
+
+export const createNewLocation = createAsyncThunk(
+  "location/createNewLocation",
+  async (options: CreateNewLocationOptions, thunkApi) => {
+    const { name, address, onSuccess, onError } = options;
+    try {
+      const response = await fetch(`${config.apiBaseUrl}/location`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ name, address }),
+      });
+      const createdLocation = await response.json();
+      thunkApi.dispatch(addLocation(createdLocation));
+      onSuccess && onSuccess();
+    } catch (err) {
+      onError && onError();
+    }
+  }
+);
+
+const locationSlice = createSlice({
+  name: "location",
+  initialState,
+  reducers: {
+    setLocations: (state, action) => {
+      state.items = action.payload;
+    },
+    addLocation: (state, action) => {
+      state.items = [...state.items, action.payload];
+    },
+  },
+});
+
+export const { setLocations, addLocation } = locationSlice.actions;
+export default locationSlice.reducer;
+```
+
+- createNewLocation thunk-action တစ်ခု လုပ်လိုက်ပြီး `/api/location` route ကို post method နဲ့ request လုပ်လိုက်ပါတယ်
+- ပြန်ရလာတဲ့response ကို addLocation actionမှာ dispatch လုပ်ပြီး payload အဖြစ် ထည့်ပေးလိုက်ပါတယ်
+- addLocation action မှာတော့ ၀င်လာတဲ့ payload ကို items array မှာ ထပ်ပေါင်းထည့်လိုက်တာပဲဖြစ်ပါတယ်
+- `/api/location` routeမှာ POST request ကို လက်ခံပြီး database မှာ location တစ်ခု အသစ်လုပ်ပေးလိုက်မှာဖြစ်ပါတယ်
+
+```js
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { prisma } from "@/utils/db";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]";
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const method = req.method;
+  if (method === "POST") {
+    const session = await getServerSession(req, res, authOptions);
+    if (!session) return res.status(401).send("Unauthorized.");
+    const user = session.user; // next-auth
+    const email = user?.email as string;
+    const dbUser = await prisma.user.findUnique({ where: { email } });
+    if (!dbUser) return res.status(401).send("Unauthorized.");
+    const companyId = dbUser.companyId;
+    const { name, address } = req.body;
+    // data validation
+    const isValid = name && address;
+    if (!isValid) return res.status(400).send("Bad request.");
+    const createdLocation = await prisma.location.create({
+      data: { name, address, companyId },
+    });
+    return res.status(200).json(createdLocation);
+  }
+  res.status(405).send("Method now allowed.");
+}
+
+```
+
+- signin လုပ်ထားတဲ့ user ကို db မှာအရင်ရှာလိုက်ပြီး ရလာတဲ့ user data ထဲက company id ကိုသုံးပြီး req body ထဲက name နဲ့ address ကို ပေါင်းကာ location အသစ်တစ်ခုကို database မှာ create လုပ်လိုက်တာပဲဖြစ်ပါတယ်
+- create လုပ်လိုက်လို့ prisma က return လုပ်ပေးတဲ့ row ကို response ပြန်လုပ်လိုက်တာပဲဖြစ်ပါတယ်
