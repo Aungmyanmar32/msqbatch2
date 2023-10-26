@@ -1200,3 +1200,5 @@ const handleCreateAddonCategory = () => {
 - addon-category create လုပ်ကြည့်ပါက data valid မဖြစ်ရင် error message ပြပေးမှာဖြစ်ပြီး created ဖြစ်ခဲ့ရင်တော့ success message ပြပေးမှာဖြစ်ပါတယ်
 - ပြန်ပိတ်မယ့်အချိန်က 3 second သတ်မှတ်ပေးထားတာမလို့ 3sec ကြာရင် autoပြန်ပိတ်ပေးသွားမှာဖြစ်ပါတယ်
 ```
+
+hello
