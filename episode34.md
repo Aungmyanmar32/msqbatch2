@@ -445,9 +445,7 @@ export const { setAddons, replaceAddon, addAddon, removeAddon } =
 export default addonSlice.reducer;
 ```
 
-###
-
-- api မှာလည်း request တွေကို လက်ခံပြီး database တွေကို update လုပ်ကာ response ပြန်ပေးလိုက်မှာဖြစ်ပါတယ်
+### api မှာလည်း request တွေကို လက်ခံပြီး database တွေကို update လုပ်ကာ response ပြန်ပေးလိုက်မှာဖြစ်ပါတယ်
 
 ```js
 // src/pages/api/addons/index.ts
