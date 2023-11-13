@@ -2,7 +2,7 @@
 
 ### Batch 2
 
-### Episode-_38_ Summary
+### Episode-_39_ Summary
 
 ##
 
